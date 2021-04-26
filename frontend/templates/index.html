@@ -4,13 +4,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>КЛИКЕР</title>
     <script src ="{% static 'js/index.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 </head>
 <body>
     <h1>CLICKER</h1>
-    <p class="click_count" id = "counter">{{mainmodel.click_count}}</p>
-    <button onclick="call_click()">click me</button>
+    <p class="desc">Накликай себе на лучший автомобиль в мире - БНВ</p>
+    <p class="desc">ДО ЦЕЛИ: 999.999.999.999.999$</p>
+    <p class="click_count" id = "counter">{{mainmodel.click_count}} $</p>
+    <button onclick="call_click()">CLICK ME</button>
 </body>
 </html>
