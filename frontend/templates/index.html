@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src ="{% static 'js/index.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+    <h1>CLICKER</h1>
+    <p class="click_count" id = "counter">{{mainmodel.click_count}}</p>
+    <button onclick="call_click()">click me</button>
+</body>
+</html>
