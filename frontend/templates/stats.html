@@ -1,0 +1,28 @@
+{% load static %}
+
+<html lang="ru">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КЛИКЕР: Статистика</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+    <aside class="menu-container">
+            <a href="/"><h1 class="name">{{ user.username }}</h1></a>
+            <a href="{% url 'logout' %}">Выйти</a>
+            <a href="{% url 'leaders' %}">Лидерборд</a>
+            <a href="{% url 'stats' %}">Статистика</a>
+            <a href="#">Достижения</a>
+    </aside>
+    <h1 class="h1-main">Статистика</h1>
+    <p class="player-stats">Имя: {{user.username}}</p>
+    <p class="player-stats">Количество очков: {{clickCount}}</p>
+    <p class="player-stats">Количество купленных бустов: {{lenBoosts}}</p>
+    <p class="player-stats">Уровень: {{level}}</p>
+    <p class="player-stats">Мощность клика: {{clickPower}}</p>
+    <p class="player-stats">Мощность автоматического клика: {{autoClickPower}}</p>
+</body>
+</html>

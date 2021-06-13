@@ -1,0 +1,35 @@
+{% load static %}
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КЛИКЕР: Лидерборд</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+    <aside class="menu-container">
+            <a href="/"><h1 class="name">{{ user.username }}</h1></a>
+            <a href="{% url 'logout' %}">Выйти</a>
+            <a href="{% url 'leaders' %}">Лидерборд</a>
+            <a href="{% url 'stats' %}">Статистика</a>
+            <a href="#">Достижения</a>
+    </aside>
+    <table class="leaders">
+        <caption><h1 class="h1-main">Таблица лидеров</h1></caption>
+        <tr>
+            <th>Имя</th>
+            {% for name in leaders %}
+            <td>{{name}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Очки</th>
+            {% for value in values %}
+            <td>{{value}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>

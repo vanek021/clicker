@@ -1,27 +1,167 @@
-h1 {
-    color: darkblue;
-}
-
-.desc {
-    font-size: 20px;
-    font-weight: bold;
-    color: maroon;
+h1 .name {
+    color: white;
 }
 
 body {
     text-align: center;
     font-family: Noto Sans, sans-serif;
-    background-color: #BEEFED;
+    margin: 0;
 }
 
-.click_count {
-    color: red;
-    font-size: 30px;
+.boost {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boost p {
+    margin: 0;
+    padding-top: 2px;
+}
+
+.auto {
+    background: #2d2d44;
+    color: white;
+}
+
+.auto:disabled {
+    color: slategray;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.boosts-container {
+    justify-content: flex-center;
+    display: flex;
+    flex-direction: column;
+}
+
+.boosts-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-center;
+}
+
+.click-holder {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.click-container {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+}
+
+.click-container img {
+    transition: all .05s ease;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-container p {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #2d2d44;
+    align-items: center;
+    height: 70px;
+}
+
+.menu-container a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+}
+
+.menu-container span {
+    margin-left: 20px;
+    color: white;
+}
+
+.menu-container .player-stats {
+    margin-left: 50px;
+}
+
+.menu-container a:hover {
+    font-decoration: underline;
+}
+
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    display:inline-block;
+}
+
+tr {
+    display:block;
+    float:left;
+    width: 300px;
+}
+
+th {
+    background:#2d2d44;
+    color: white;
+    border:1px solid white;
+    padding:10px;
+    box-sizing:border-box;
+    display:block;
+    font-weight: normal;
+    width: 300px;
+}
+
+td {
+    width: 300px;
+    border:1px solid black;
+    padding:10px;
+    box-sizing:border-box;
+    display:block;
+    white-space:nowrap;
+}
+
+table caption {
+    padding-bottom: 20px;
+    font-family: Noto Sans, sans-serif;
     font-weight: bold;
 }
 
-button {
-    background-color: #6653d9;
-    color: white;
+.player-stats {
     font-size: 20px;
+    color: #2d2d44;
+}
+
+.register-form {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #2d2d44;
+}
+
+.login-form {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #2d2d44;
+}
+
+.h1-main {
+    color: #2d2d44;
+    font-size: 30px;
 }

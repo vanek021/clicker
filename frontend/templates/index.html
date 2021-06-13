@@ -1,18 +1,62 @@
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>КЛИКЕР</title>
     <script src ="{% static 'js/index.js' %}"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КЛИКЕР</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 </head>
 <body>
-    <h1>CLICKER</h1>
-    <p class="desc">Накликай себе на лучший автомобиль в мире - БНВ</p>
-    <p class="desc">ДО ЦЕЛИ: 999.999.999.999.999$</p>
-    <p class="click_count" id = "counter">{{mainmodel.click_count}} $</p>
-    <button onclick="call_click()">CLICK ME</button>
+    <main class="container">
+        <aside class="menu-container">
+            <a href=""><h1 class="name">{{ user.username }}</h1></a>
+            <a href="{% url 'logout' %}">Выйти</a>
+            <a href="{% url 'leaders' %}">Лидерборд</a>
+            <a href="{% url 'stats' %}">Статистика</a>
+            <a href="#">Достижения</a>
+            <div class="player-stats">
+                <span class="click_count">
+                    Монеты: <span id="counter">{{ mainmodel.click_count }}</span>
+                </span>
+                <span>
+                    Сила: <span id="click_power">{{ mainmodel.click_power }}</span>
+                </span>
+                <span>
+                    Сила (авто.):<span id="auto_click_power">+{{ mainmodel.auto_click_power}}</span>
+                </span>
+            </div>
+        </aside>
+
+        <div class="click-container">
+            <button class="click-holder" onclick="call_click()">
+                <img id="click-img" src="{% static 'imgs/python.png' %}">
+            </button>
+        </div>
+
+        <aside class="boosts-container">
+            <h3>BOOSTS</h3>
+            <div class="boosts-holder" id="boosts-holder">
+                {% for boost in boosts %}
+                    {% if boost.boost_type == 0 %}
+                        <button class="boost" onclick="buy_boost({{boost.id}})">
+                            <p>Ур.:{{boost.level}}</p>
+                            <p><span id="boost_power">Сила:{{boost.power}}</span></p>
+                            <p><span id="boost_price">Цена:{{boost.price}}</span></p>
+                        </button>
+                    {% endif %}
+                    {% if boost.boost_type == 1 %}
+                        <button class="boost auto" onclick="buy_boost({{boost.id}})">
+                            <p>Ур.: {{boost.level}}</p>
+                            <p><span id="boost_power">Сила:{{boost.power}}</span></p>
+                            <p><span id="boost_price">Цена:{{boost.price}}</span></p>
+                        </button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </aside>
+    </main>
 </body>
 </html>
